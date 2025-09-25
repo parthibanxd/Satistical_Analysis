@@ -9,6 +9,9 @@ df = pd.read_csv(
     delimiter=";"
 )
 
+# Preview first 5 rows
+print(df.head())
+
 x = df["studytime"]
 y = df["G3"]
 
@@ -33,5 +36,5 @@ print(f"Mean squared error: {mse:.3f}")
 
 # Example prediction
 studytime_value = 2
-pred_example = model.predict([1, studytime_value])
+pred_example = model.predict([[1, studytime_value]])  # fixed
 print(f"Predicted final score for studytime={studytime_value}: {pred_example[0]:.2f}")
